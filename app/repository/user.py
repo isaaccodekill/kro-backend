@@ -8,7 +8,8 @@ class UserRepository:
         self.db = db
 
     def create(self, user: User):
-        self.db.add(user).commit().refresh(user)
+        self.db.add(user)
+        self.db.commit()
         return user
 
     def get(self, id):

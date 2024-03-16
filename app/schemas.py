@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+import uuid as uuidpkg
 
 from app.enums import TransactionType
 
@@ -27,7 +28,7 @@ class LoginUser(BaseModel):
 
 
 class User(BaseModel):
-    id: int
+    id: uuidpkg.UUID
     first_name: str
     last_name: str
     email: str

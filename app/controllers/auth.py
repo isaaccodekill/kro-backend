@@ -13,11 +13,11 @@ async def login(data: LoginUser, response: Response, auth_service: AuthService =
                 user_service: UserService = Depends(get_user_service)):
     token = auth_service.login(data.email, data.password)
     if token is None:
-        raise HTTPException(status_code=401, detail="{description: 'Bad login credentials'}")
+        raise HTTPException(status_code=401, detail="Bad login credentials")
 
     user = user_service.get_user_by_email(data.email)
     if user is None:
-        raise HTTPException(status_code=401, detail="{description: 'Bad login credentials'}")
+        raise HTTPException(status_code=401, detail="Bad login credentials")
 
     user_response = User(
         id=user.id,
@@ -26,7 +26,7 @@ async def login(data: LoginUser, response: Response, auth_service: AuthService =
         last_name=user.last_name
     )
 
-    response.set_cookie(key="token", value=user["token"])
+    response.set_cookie(key="token", value=token, httponly=True, samesite="lax", max_age=1800 * 24)
     return {"description": "success", "user": user_response}
 
 
