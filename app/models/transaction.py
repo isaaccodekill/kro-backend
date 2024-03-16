@@ -12,7 +12,7 @@ class Transaction(SQLModel, table=True):
     type: str = "deposit"
     timestamp: datetime.datetime = Field(default_factory=datetime.datetime.now, nullable=False)
     payment_method: Optional[str] = None
-    user_id: uuidpkg.UUID = Field(default_factory=uuid4, primary_key=True, index=True,nullable=False)
+    user_id: uuidpkg.UUID = Field(default_factory=None, foreign_key="user.id")
     user: "User" = Relationship(back_populates="transactions")
 
 
