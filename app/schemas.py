@@ -21,6 +21,11 @@ class CreateUser(BaseModel):
     password: str
 
 
+class LoginUser(BaseModel):
+    email: str
+    password: str
+
+
 class User(BaseModel):
     id: int
     first_name: str

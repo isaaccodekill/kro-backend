@@ -12,6 +12,7 @@ class User(SQLModel, table=True):
     first_name: str
     last_name: str
     email: str
+    hashed_password: str
     created_at: datetime
     updated_at: datetime
     transactions: list["Transaction"] = Relationship(back_populates="user")

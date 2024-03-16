@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f24b8903-d31f-4f6d-ab55-71e22e20ab23" name="Changes" comment="created user and transaction models">
-      <change afterPath="$PROJECT_DIR$/app/controllers/transactions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dependecies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repository/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/seeder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/user.py" afterDir="false" />
+    <list default="true" id="f24b8903-d31f-4f6d-ab55-71e22e20ab23" name="Changes" comment="created user routes">
+      <change afterPath="$PROJECT_DIR$/app/controllers/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dependecies.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dependecies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <updated>1710590580775</updated>
       <workItem from="1710591216669" duration="735000" />
       <workItem from="1710592455681" duration="65000" />
-      <workItem from="1710592544478" duration="9419000" />
+      <workItem from="1710592544478" duration="14427000" />
     </task>
     <task id="LOCAL-00001" summary="start commit">
       <option name="closed" value="true" />
@@ -127,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710595849651</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="created user routes">
+      <option name="closed" value="true" />
+      <created>1710618098509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710618098509</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +147,8 @@
     <MESSAGE value="create project core structure" />
     <MESSAGE value="create Transaction response type" />
     <MESSAGE value="created user and transaction models" />
-    <option name="LAST_COMMIT_MESSAGE" value="created user and transaction models" />
+    <MESSAGE value="created user routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="created user routes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fastApiProject$fastApiProject.coverage" NAME="fastApiProject Coverage Results" MODIFIED="1710592912412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
