@@ -3,8 +3,8 @@ from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
 from app.services.auth import AuthService
-from repository.user import UserRepository
-from services.user import UserService
+from app.repository.user import UserRepository
+from app.services.user import UserService
 
 
 def get_db_session() -> Session:
