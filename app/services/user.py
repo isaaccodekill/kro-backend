@@ -6,9 +6,8 @@ from app.services.transaction import TransactionService
 
 
 class UserService:
-    def __init__(self, user_repository: UserRepository, transaction_service: TransactionService):
+    def __init__(self, user_repository: UserRepository):
         self.user_repo = user_repository
-        self.transaction_service = transaction_service
 
     def get_user(self, user_id):
         return self.user_repo.get(user_id)

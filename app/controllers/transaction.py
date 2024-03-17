@@ -14,3 +14,11 @@ async def get_all_transactions(user_id: int = Depends(get_current_user),
                                transaction_service: TransactionService = Depends(get_transaction_service)):
     transactions: List[Transaction] = transaction_service.list_transactions(user_id)
     return transactions
+
+
+@router.post("/generate")
+async def generate_transactions(
+                                user_id: int = Depends(get_current_user),
+                                transaction_service: TransactionService = Depends(get_transaction_service)):
+    created_transactions: List[Transaction] = transaction_service.create_transactions(user_id)
+    return created_transactions
