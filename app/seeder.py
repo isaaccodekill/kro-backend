@@ -13,7 +13,7 @@ from datetime import datetime
 # each transaction will be associated with a user
 
 
-def seed_user_with_transactions(user: User):
+def seed_user_with_transactions(user_id: str):
     transactions = []
     for i in range(10, 20):
         transaction = Transaction(
@@ -21,7 +21,7 @@ def seed_user_with_transactions(user: User):
             type=TransactionType.DEPOSIT if i % 2 == 0 else TransactionType.WITHDRAWAL,
             timestamp=datetime.now(),
             payment_method="cash",
-            user_id=user.id
+            user_id=user_id
         )
         transactions.append(transaction)
     return transactions

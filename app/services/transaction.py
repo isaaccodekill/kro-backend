@@ -1,4 +1,5 @@
 from app.repository.transaction import TransactionRepository
+from app.seeder import seed_user_with_transactions
 
 
 class TransactionService:
@@ -8,7 +9,8 @@ class TransactionService:
     def list_transactions(self, user_id):
         return self.transaction_repo.list(user_id)
 
-    def create_transactions(self, transactions):
-        return self.transaction_repo.create_many(transactions)
-
+    def create_transactions(self, user_id):
+        transactions = seed_user_with_transactions(user_id)
+        self.transaction_repo.create_many(transactions)
+        return self.list_transactions(user_id)
 
