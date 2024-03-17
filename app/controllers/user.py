@@ -14,3 +14,5 @@ async def get_profile(user_id: int = Depends(get_current_user), user_service: Us
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={"description": "User not found"})
     return user
 
+
+

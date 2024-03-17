@@ -39,3 +39,7 @@ async def register(register_data: CreateUser, auth_service: AuthService = Depend
     }
 
 
+@router.post("/logout")
+async def logout(response: Response):
+    response.delete_cookie(key="token")
+    return {"description": "success"}
