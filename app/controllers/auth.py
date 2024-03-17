@@ -12,7 +12,6 @@ router = APIRouter()
 async def login(data: LoginUser, response: Response, auth_service: AuthService = Depends(get_auth_service),
                 user_service: UserService = Depends(get_user_service)):
     token = auth_service.login(data.email, data.password)
-    print(token, "the token")
     if token is None:
         raise HTTPException(status_code=401, detail="Bad login credentials")
 

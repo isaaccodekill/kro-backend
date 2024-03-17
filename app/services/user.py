@@ -23,7 +23,4 @@ class UserService:
             last_name=user.last_name
         )
         created_user = self.user_repo.create(new_user)
-        # seed transactions for the user
-        transactions = seed_user_with_transactions(created_user.id)
-        self.transaction_service.create_transactions(transactions)
         return self.user_repo.create(new_user)

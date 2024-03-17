@@ -46,7 +46,6 @@ async def get_current_user(request: Request):
 
     # decode token and get user_id
     user_id = decode_token(token).get("sub")
-    print(user_id, "user_id from token")
     if user_id is None:
         raise HTTPException(status_code=401, detail="Unauthorized")
 

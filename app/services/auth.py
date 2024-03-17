@@ -17,7 +17,6 @@ class AuthService:
         if not verify_password(password, user.hashed_password):
             raise HTTPException(status_code=400, detail="Bad login credentials")
         token = create_token({"sub": str(user.id)})
-        print(token, "the token in auth service")
         return token
 
     def register(self, user_data: CreateUser):
