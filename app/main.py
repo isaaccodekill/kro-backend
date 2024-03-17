@@ -1,4 +1,13 @@
+import os.path
+
 from fastapi import FastAPI
+from dotenv import load_dotenv
+
+print("on_startup")
+dotenv_path = os.path.join('..', '.env')
+print(dotenv_path, "dotenv_path")
+load_dotenv()
+
 from app.controllers import user, auth, transaction
 from app.database import create_tables
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,11 +29,12 @@ app.add_middleware(
 
 )
 
+
 # on start up, create the tables
 @app.on_event("startup")
 async def on_startup():
-    # create_tables()
     create_tables()
+
 
 app.include_router(user.router, prefix="/api/v1/user")
 app.include_router(auth.router, prefix="/api/v1/auth")

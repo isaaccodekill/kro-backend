@@ -30,22 +30,30 @@ A step-by-step series of examples that tell you how to get a development environ
    cd kro-backend
    ```
 
-3. Install the required packages
+3. Create a virtual environment
+
+   ```sh
+   python -m venv venv
+   source venv/bin/activate # for linux or mac
+   source venv\Scripts\activate # for windows  
+   ```   
+
+4. Install the required packages
 
    ```sh
    pip install -r requirements.txt
    ```
    
-4. Create a `.env` file in the root directory of the project and add the following environment variables:
+5. Create a `.env` file in the root directory of the project and add the following environment variables:
 
    ```sh
     DATABASE_URL=postgresql://username:password@localhost:5432/kro
     ```
 
-5. Run the fastapi server
+6. Run the fastapi server
 
    ```sh
    uvicorn app.main:app --reload
    ```   
 
-6. Navigate to `http://127.0.0.1:8000/docs` in your browser to view the API documentation
+7. Navigate to `http://127.0.0.1:8000/docs` in your browser to view the API documentation

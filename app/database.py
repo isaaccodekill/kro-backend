@@ -1,8 +1,11 @@
+import os
 from sqlmodel import SQLModel, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "postgresql://krodb_owner:DWp1rYauq9ON@ep-fragrant-thunder-a5medf58.us-east-2.aws.neon.tech/krodb?sslmode=require"
+# get the database url from the environment
+print(os.getenv("DATABASE_URL"))
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
