@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.controllers import user, auth
+from app.controllers import user, auth, transaction
 from app.database import create_tables
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -28,3 +28,4 @@ async def on_startup():
 
 app.include_router(user.router, prefix="/api/v1/user")
 app.include_router(auth.router, prefix="/api/v1/auth")
+app.include_router(transaction.router, prefix="/api/v1/transactions")

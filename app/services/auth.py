@@ -5,7 +5,6 @@ from app.utils.auth import verify_password, get_password_hash, create_token
 from fastapi import HTTPException
 
 
-
 class AuthService:
     def __init__(self, user_service: UserService):
         self.user_service = user_service
@@ -17,9 +16,9 @@ class AuthService:
 
         if not verify_password(password, user.hashed_password):
             raise HTTPException(status_code=400, detail="Bad login credentials")
-
-        return create_token({"sub": user.email}),
-
+        token = create_token({"sub": str(user.id)})
+        print(token, "the token in auth service")
+        return token
 
     def register(self, user_data: CreateUser):
         user: User = self.user_service.get_user_by_email(user_data.email)

@@ -12,7 +12,6 @@ class Transaction(BaseModel):
     type: TransactionType = Field(default=TransactionType.DEPOSIT)
     timestamp: datetime
     payment_method: str = None
-    user_id: int
 
 
 class CreateUser(BaseModel):
